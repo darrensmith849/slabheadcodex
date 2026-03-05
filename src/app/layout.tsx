@@ -57,9 +57,12 @@ export default async function RootLayout({
           <NeonAuroraBackground pathname={pathname} />
           <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
           <header className="sticky top-0 z-50 mt-2 rounded-xl border border-[#89a0ff]/30 bg-[linear-gradient(135deg,rgba(12,19,36,0.86),rgba(16,24,43,0.8))] shadow-[0_0_0_1px_rgba(120,148,255,0.24),0_18px_44px_rgba(4,10,26,0.45)] backdrop-blur-md">
-            <nav className="flex items-center justify-between py-4">
-              <Link href="/" className="font-heading text-xl uppercase tracking-[0.22em] text-[#f6f8ff] [text-shadow:0_0_14px_rgba(120,146,255,0.35)]">
-                {siteConfig.siteName}
+            <nav className="flex items-center justify-between py-3">
+              <Link
+                href="/"
+                className="inline-flex min-h-11 items-center rounded-lg border border-[#93a6ff]/35 bg-[linear-gradient(135deg,rgba(74,96,255,0.2),rgba(236,109,255,0.16))] px-4 py-2 font-heading text-base uppercase tracking-[0.22em] leading-none text-[#f6f8ff] shadow-[0_0_18px_rgba(120,146,255,0.24)]"
+              >
+                SLABHEAD
               </Link>
               <ul className="flex items-center gap-5 text-sm font-semibold tracking-[0.08em] text-muted-foreground">
                 {siteConfig.nav.map((item) => (
