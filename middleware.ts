@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const goneRoutes = new Set([
+const GONE_ROUTES = new Set([
   "/sample-page",
   "/testpage",
   "/test-shop",
@@ -27,11 +27,32 @@ const goneRoutes = new Set([
   "/news-feed",
 ]);
 
-export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname.replace(/\/$/, "") || "/";
+const PUBLIC_FILE = /\.[^/]+$/;
 
-  if (goneRoutes.has(pathname)) {
-    return new NextResponse("Gone", {
+function normalizePath(pathname: string) {
+  if (pathname === "/") return "/";
+  return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+}
+
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Skip internal/static/system routes to keep middleware stable on Edge.
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/.well-known") ||
+    pathname === "/favicon.ico" ||
+    pathname === "/robots.txt" ||
+    pathname === "/sitemap.xml" ||
+    PUBLIC_FILE.test(pathname)
+  ) {
+    return NextResponse.next();
+  }
+
+  const normalized = normalizePath(pathname);
+  if (GONE_ROUTES.has(normalized)) {
+    return new Response("Gone", {
       status: 410,
       headers: {
         "content-type": "text/plain; charset=utf-8",
@@ -44,5 +65,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)"],
+  matcher: ["/:path*"],
 };
