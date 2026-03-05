@@ -30,6 +30,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.siteName,
+    url: siteConfig.siteUrl,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: siteConfig.contact.email,
+    },
+  };
+
   return (
     <html lang="en">
       <body className="min-h-screen bg-background text-foreground antialiased">
@@ -52,6 +64,13 @@ export default function RootLayout({
           </header>
 
           <main className="flex-1 py-8">{children}</main>
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(organizationJsonLd),
+            }}
+          />
 
           <footer className="border-t border-white/10 py-6 text-sm text-muted-foreground">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
