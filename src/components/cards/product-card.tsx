@@ -15,13 +15,13 @@ type ProductCardProps = {
 
 export function ProductCard({ slug, name, image, price, company, score, game }: ProductCardProps) {
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#11172b] transition duration-300 hover:-translate-y-1 hover:border-[#385dff]/70 hover:shadow-[0_24px_60px_rgba(5,10,26,0.7)]">
+    <article className="interactive-card group relative overflow-hidden rounded-2xl border border-white/10 bg-[#11172b] hover:border-[#5a76ff]/70 hover:shadow-[0_24px_60px_rgba(5,10,26,0.68)]">
       <span className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100">
-        <span className="absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(255,255,255,0.16)_40%,transparent_60%)] bg-[length:200%_100%] animate-[shimmer_2.2s_linear_infinite]" />
+        <span className="motion-safe:animate-[shimmer_2.4s_linear_infinite] motion-reduce:animate-none absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(255,255,255,0.16)_40%,transparent_60%)] bg-[length:200%_100%]" />
       </span>
       <Link href={`/product/${slug}`} className="relative block">
         <div className="relative aspect-[3/4] overflow-hidden">
-          <Image src={image} alt={name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+          <Image src={image} alt={name} fill className="motion-safe:group-hover:scale-[1.035] object-cover transition duration-500" />
         </div>
         <div className="space-y-3 p-4">
           <p className="text-xs uppercase tracking-[0.18em] text-[#8ea2d6]">{game}</p>
