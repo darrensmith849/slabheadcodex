@@ -20,13 +20,13 @@ export function ProductCard({ slug, name, image, price, company, score, game }: 
         <span className="motion-safe:animate-[shimmer_2.4s_linear_infinite] motion-reduce:animate-none absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(255,255,255,0.16)_40%,transparent_60%)] bg-[length:200%_100%]" />
       </span>
       <Link href={`/product/${slug}`} className="relative block">
-        <div className="relative aspect-[5/7] overflow-hidden">
+        <div className="relative aspect-[4/5] overflow-hidden bg-[radial-gradient(circle_at_50%_10%,rgba(91,118,255,0.2),rgba(10,16,30,0.9)_70%)]">
           <Image
             src={image}
             alt={name}
             fill
             sizes="(max-width: 768px) 92vw, (max-width: 1280px) 48vw, (max-width: 1536px) 44vw, 30vw"
-            className="motion-safe:group-hover:scale-[1.035] object-cover transition duration-500"
+            className="motion-safe:group-hover:scale-[1.08] object-contain p-2 transition duration-500"
           />
         </div>
         <div className="space-y-3 p-4">
