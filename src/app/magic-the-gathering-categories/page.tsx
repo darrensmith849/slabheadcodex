@@ -4,7 +4,7 @@ import { searchProducts } from "@/lib/commerce/provider";
 
 export const metadata: Metadata = {
   title: "Magic The Gathering Categories",
-  description: "MTG slabbed and sealed highlights from Codex.",
+  description: "MTG slabbed and sealed highlights from Slabhead.",
   alternates: {
     canonical: "/magic-the-gathering-categories",
   },

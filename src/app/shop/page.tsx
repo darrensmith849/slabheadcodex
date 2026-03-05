@@ -10,7 +10,7 @@ type ShopPageProps = {
 
 export const metadata: Metadata = {
   title: "Shop",
-  description: "Browse Codex graded cards and sealed products with transparent filters.",
+  description: "Browse Slabhead graded cards and sealed products with transparent filters.",
   alternates: {
     canonical: "/shop",
   },
@@ -46,7 +46,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
         <span className="pointer-events-none absolute left-[35%] top-[68%] h-40 w-40 rounded-full bg-[#20c8ff]/17 blur-3xl" />
         <div className="relative z-10 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="font-heading text-xs uppercase tracking-[0.24em] text-[#a6b7ff]">Codex Shop Grid</p>
+            <p className="font-heading text-xs uppercase tracking-[0.24em] text-[#a6b7ff]">Slabhead Shop Grid</p>
             <h1 className="mt-2 font-heading text-3xl uppercase tracking-[0.12em] text-[#f4f7ff]">Shop</h1>
             <p className="mt-2 max-w-2xl text-[#c0cdef]">
               Browse live inventory with grading, category, and pricing filters tuned for fast collector decisions.

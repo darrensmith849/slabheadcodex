@@ -34,7 +34,7 @@ export function ServiceFlow({ eyebrow, title, intro, steps, note }: ServiceFlowP
         <h2 className="font-heading text-xl uppercase tracking-[0.1em]">Start an Enquiry</h2>
         <p className="mt-2 text-[#bac6e7]">Use our secure enquiry form to start this service.</p>
         <Link href="/contact-us" className="mt-4 inline-flex rounded-md bg-[#385dff] px-4 py-2 font-semibold text-white hover:brightness-110">
-          Contact Codex
+          Contact Slabhead
         </Link>
       </section>
     </div>

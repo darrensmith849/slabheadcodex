@@ -6,7 +6,7 @@ import { listCategories, listProducts } from "@/lib/commerce/provider";
 
 export const metadata: Metadata = {
   title: "Collectables",
-  description: "Explore Codex collectables across Pokemon, Yu-Gi-Oh, and MTG with a premium card-first browsing experience.",
+  description: "Shop Slabhead collectables across Pokemon, Yu-Gi-Oh, Magic: The Gathering, and accessories.",
   alternates: {
     canonical: "/collectables",
   },
@@ -21,20 +21,20 @@ export default async function CollectablesPage() {
         <div>
           <h1 className="font-heading text-4xl uppercase tracking-[0.08em]">Collectables</h1>
           <p className="mt-3 max-w-2xl text-lg text-[#b8c6e8]">
-            Dive into slabbed cards, sealed product, and curated collector highlights. Every listing runs through Codex verification and clear pricing standards.
+            From slabbed grails to sealed product and everyday collector accessories, we&apos;ve got it all.
           </p>
           <Link href="/shop" className="mt-5 inline-flex rounded-md bg-[#385dff] px-4 py-2 text-sm font-semibold text-white hover:brightness-110">
             Open full shop
           </Link>
         </div>
         <div className="relative min-h-[240px] overflow-hidden rounded-xl border border-white/10">
-          <Image src="/assets/legacy/brand/scene-02.jpg" alt="Codex collectables hero" fill sizes="(max-width: 1024px) 100vw, 35vw" className="object-cover" />
+          <Image src="/assets/legacy/brand/scene-02.jpg" alt="Slabhead collectables hero" fill sizes="(max-width: 1024px) 100vw, 35vw" className="object-cover" />
         </div>
       </section>
 
       <section className="space-y-4">
-        <h2 className="font-heading text-2xl uppercase tracking-[0.14em]">Game Hubs</h2>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <h2 className="font-heading text-2xl uppercase tracking-[0.14em]">Category Hubs</h2>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {categories.map((category) => (
             <CategoryCard
               key={category.slug}
@@ -44,6 +44,22 @@ export default async function CollectablesPage() {
               description={category.description}
             />
           ))}
+          <Link
+            href="/shop?category=accessories"
+            className="interactive-card group relative block overflow-hidden rounded-2xl border border-white/10 bg-[#11172b] p-5 hover:border-[#5a76ff]/70"
+          >
+            <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-xl border border-white/10">
+              <Image
+                src="/assets/legacy/categories/pokemon-sealed.jpg"
+                alt="Accessories"
+                fill
+                sizes="(max-width: 768px) 92vw, (max-width: 1280px) 46vw, 24vw"
+                className="object-cover transition duration-500 motion-safe:group-hover:scale-[1.03]"
+              />
+            </div>
+            <h3 className="font-heading text-xl uppercase tracking-[0.12em] text-[#f4f7ff]">Accessories</h3>
+            <p className="mt-2 text-sm text-[#b8c3e0]">Sleeves, binders, storage, and collector essentials.</p>
+          </Link>
         </div>
       </section>
 

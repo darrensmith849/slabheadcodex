@@ -4,7 +4,7 @@ import { searchProducts } from "@/lib/commerce/provider";
 
 export const metadata: Metadata = {
   title: "Yu-Gi-Oh Categories",
-  description: "Yu-Gi-Oh slabbed and sealed highlights from Codex.",
+  description: "Yu-Gi-Oh slabbed and sealed highlights from Slabhead.",
   alternates: {
     canonical: "/yu-gi-oh-categories",
   },

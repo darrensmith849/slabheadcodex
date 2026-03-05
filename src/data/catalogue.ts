@@ -26,7 +26,7 @@ export const categories: Category[] = [
 
 export const products: Product[] = [
   {
-    id: "codex-dark-charizard-cgc8-5",
+    id: "slabhead-dark-charizard-cgc8-5",
     slug: "dark-charizard-cgc-8-5",
     name: "Dark Charizard, CGC 8.5",
     description: "High-grade Dark Charizard slab sourced for premium collectors. Case condition and centering checked.",
@@ -39,7 +39,7 @@ export const products: Product[] = [
     tags: ["pokemon", "slab", "cgc", "charizard"],
   },
   {
-    id: "codex-vaporeon-vivid-psa9-2",
+    id: "slabhead-vaporeon-vivid-psa9-2",
     slug: "vaporeon-psa-9",
     name: "Vaporeon, PSA 9",
     description: "Classic Vaporeon slab with verified serial details and collector-grade presentation.",
@@ -52,7 +52,7 @@ export const products: Product[] = [
     tags: ["pokemon", "vaporeon", "psa"],
   },
   {
-    id: "codex-arcanine-psa-9-2",
+    id: "slabhead-arcanine-psa-9-2",
     slug: "arcanine-psa-9-2",
     name: "Arcanine Promo, PSA 9",
     description: "Vintage promo Arcanine with slab clarity and verified front/back condition notes.",
@@ -65,7 +65,7 @@ export const products: Product[] = [
     tags: ["pokemon", "arcanine", "psa", "promo"],
   },
   {
-    id: "codex-kingler-cgc10",
+    id: "slabhead-kingler-cgc10",
     slug: "kingler-cgc-10",
     name: "Kingler, CGC 10",
     description: "High-grade holo Kingler slab from a classic-era set with transparent grading details.",
@@ -78,7 +78,7 @@ export const products: Product[] = [
     tags: ["pokemon", "kingler", "cgc"],
   },
   {
-    id: "codex-ghosts-from-the-past-2",
+    id: "slabhead-ghosts-from-the-past-2",
     slug: "ghosts-from-the-past-2",
     name: "Ghosts From The Past 2",
     description: "Collector-oriented Yu-Gi-Oh sealed product, listed with condition notes and stock status.",
@@ -89,10 +89,10 @@ export const products: Product[] = [
     tags: ["yugioh", "sealed", "booster"],
   },
   {
-    id: "codex-yugioh-slabbed-feature",
+    id: "slabhead-yugioh-slabbed-feature",
     slug: "yugioh-slabbed-feature",
     name: "Yu-Gi-Oh Slabbed Feature",
-    description: "A rotating Yu-Gi-Oh slabbed showcase sourced from Codex collector inventory.",
+    description: "A rotating Yu-Gi-Oh slabbed showcase sourced from Slabhead collector inventory.",
     game: "yugioh",
     category: "yugioh-slabbed",
     offer: { price: 1299, currency: "ZAR", availability: "in_stock" },
@@ -100,7 +100,7 @@ export const products: Product[] = [
     tags: ["yugioh", "slabbed"],
   },
   {
-    id: "codex-mtg-zendikar",
+    id: "slabhead-mtg-zendikar",
     slug: "mtg-zendikar-rising-collector-booster",
     name: "MTG Zendikar Rising Collector Booster",
     description: "Premium MTG collector booster listing with transparent stock and pricing metadata.",
@@ -111,7 +111,7 @@ export const products: Product[] = [
     tags: ["mtg", "sealed", "collector-booster"],
   },
   {
-    id: "codex-slaking-psa9",
+    id: "slabhead-slaking-psa9",
     slug: "slaking-psa-9",
     name: "Slaking, PSA 9",
     description: "A slabbed Pokemon listing with transparent stock and pricing metadata.",

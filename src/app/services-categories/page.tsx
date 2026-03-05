@@ -6,7 +6,7 @@ export default function ServicesCategoriesPage() {
       <section className="rounded-2xl border border-white/10 bg-[#101524] p-8">
         <h1 className="font-heading text-4xl uppercase tracking-[0.08em]">Services</h1>
         <p className="mt-3 text-lg text-[#b9c7e8]">
-          Codex services are built for collectors who need sourcing, trading, grading guidance, and structured liquidity options.
+          Slabhead services are built for collectors who need sourcing, trading, grading guidance, and structured liquidity options.
         </p>
       </section>
 

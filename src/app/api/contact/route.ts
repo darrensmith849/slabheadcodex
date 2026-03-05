@@ -12,6 +12,7 @@ export async function POST(request: Request) {
   const subject = String(formData.get("subject") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
   const website = String(formData.get("website") ?? "").trim();
+  const whatsappConsent = String(formData.get("whatsappConsent") ?? "").trim();
 
   if (website) {
     return NextResponse.redirect(new URL("/contact-us?sent=1", request.url));
@@ -24,7 +25,8 @@ export async function POST(request: Request) {
     !subject ||
     subject.length < 4 ||
     !message ||
-    message.length < 20;
+    message.length < 20 ||
+    (whatsappConsent !== "" && whatsappConsent !== "yes" && whatsappConsent !== "no");
 
   if (invalid) {
     return NextResponse.redirect(new URL("/contact-us?error=1", request.url));

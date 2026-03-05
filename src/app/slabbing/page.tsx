@@ -3,7 +3,7 @@ import { ServiceFlow } from "@/components/services/service-flow";
 export default function SlabbingPage() {
   return (
     <ServiceFlow
-      eyebrow="Codex Service"
+      eyebrow="Slabhead Service"
       title="Slabbing"
       intro="Get practical prep and submission guidance to reduce avoidable grading mistakes and improve consistency."
       steps={[
