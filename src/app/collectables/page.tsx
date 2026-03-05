@@ -34,7 +34,7 @@ export default async function CollectablesPage() {
 
       <section className="space-y-4">
         <h2 className="font-heading text-2xl uppercase tracking-[0.14em]">Category Hubs</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {categories.map((category) => (
             <CategoryCard
               key={category.slug}
@@ -65,7 +65,7 @@ export default async function CollectablesPage() {
 
       <section className="space-y-4">
         <h2 className="font-heading text-2xl uppercase tracking-[0.14em]">Featured Collectables</h2>
-        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {products.slice(0, 8).map((product) => (
             <ProductCard
               key={product.id}

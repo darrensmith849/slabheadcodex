@@ -68,7 +68,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="space-y-10">
-      <section className="grid gap-8 lg:grid-cols-[minmax(0,620px)_1fr]">
+      <section className="grid gap-8 lg:grid-cols-[minmax(0,560px)_1fr]">
         <Gallery images={product.images} />
         <div className="space-y-5">
           <p className="font-heading text-xs uppercase tracking-[0.26em] text-[#8ea2d6]">{product.game}</p>
@@ -100,7 +100,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <section className="space-y-4">
         <h2 className="font-heading text-2xl uppercase tracking-[0.14em]">Related Items</h2>
-        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3">
           {related.map((item) => (
             <ProductCard
               key={item.id}
