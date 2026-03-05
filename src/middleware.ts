@@ -22,7 +22,6 @@ const GONE_ROUTES = new Set([
   "/thank-you-page",
   "/members",
   "/basket",
-  "/checkout",
   "/news-feed",
 ]);
 

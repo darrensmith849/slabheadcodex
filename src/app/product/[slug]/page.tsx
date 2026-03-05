@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProductCard } from "@/components/cards";
+import { AddToCartButton } from "@/components/commerce/add-to-cart-button";
 import { Gallery } from "@/components/commerce/gallery";
 import { siteConfig } from "@/config/site";
 import { getProductBySlug, listProducts } from "@/lib/commerce/provider";
@@ -90,6 +91,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <p>Grade Company: {product.gradeCompany ?? "Unspecified"}</p>
             <p>Grade Score: {product.gradeScore ?? "Unspecified"}</p>
           </div>
+          <AddToCartButton slug={product.slug} disabled={product.offer.availability === "out_of_stock"} />
           <Link href="/shop" className="inline-flex rounded-md border border-white/20 px-4 py-2 font-semibold hover:bg-white/5">
             Back to Shop
           </Link>
