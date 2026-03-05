@@ -38,13 +38,16 @@ export default async function RootLayout({
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: siteConfig.siteName,
+    name: siteConfig.legalName,
     url: siteConfig.siteUrl,
+    email: siteConfig.primaryEmail,
+    openingHours: siteConfig.hours.openingHours,
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: siteConfig.contact.email,
+      email: siteConfig.primaryEmail,
     },
+    sameAs: [siteConfig.socials.instagram],
   };
 
   return (
@@ -82,7 +85,7 @@ export default async function RootLayout({
           <footer className="border-t border-white/10 py-6 text-sm text-muted-foreground">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <p>
-                {new Date().getFullYear()} {siteConfig.siteName}. Premium TCG marketplace.
+                {new Date().getFullYear()} {siteConfig.siteName}. Rare Pokémon cards and collector services in South Africa.
               </p>
               <div className="flex gap-4">
                 <Link href="/privacy-policy" className="hover:text-foreground">
