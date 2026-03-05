@@ -48,10 +48,10 @@ export default function RootLayout({
         <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
           <header className="sticky top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur">
             <nav className="flex items-center justify-between py-4">
-              <Link href="/" className="font-heading text-xl uppercase tracking-[0.2em]">
+              <Link href="/" className="font-heading text-xl uppercase tracking-[0.22em] text-[#f2f5ff]">
                 {siteConfig.siteName}
               </Link>
-              <ul className="flex items-center gap-5 text-sm font-semibold tracking-wide text-muted-foreground">
+              <ul className="flex items-center gap-5 text-sm font-semibold tracking-[0.08em] text-muted-foreground">
                 {siteConfig.nav.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="transition hover:text-foreground">
@@ -63,7 +63,7 @@ export default function RootLayout({
             </nav>
           </header>
 
-          <main className="flex-1 py-8">{children}</main>
+          <main className="flex-1 py-10">{children}</main>
 
           <script
             type="application/ld+json"

@@ -21,15 +21,21 @@
 :root {
   --font-heading: "Bank Gothic", "Eurostile", "Trebuchet MS", sans-serif;
   --font-body: "Exo 2", "Segoe UI", "Trebuchet MS", sans-serif;
-  --background: #090d15;
+  --background: #080b14;
   --foreground: #edf1ff;
-  --card: #101524;
+  --card: #101424;
   --card-foreground: #edf1ff;
-  --primary: #385dff;
+  --primary: #496dff;
   --primary-foreground: #f7f9ff;
-  --muted: #111b2f;
-  --muted-foreground: #a7b2cc;
-  --border: rgba(237, 241, 255, 0.14);
+  --muted: #121c31;
+  --muted-foreground: #adb9d6;
+  --border: rgba(237, 241, 255, 0.16);
+  --surface-1: #0f1628;
+  --surface-2: #131f36;
+  --accent-cyan: #20c8ff;
+  --accent-pink: #ec6dff;
+  --accent-indigo: #6880ff;
+  --shadow-card: 0 18px 42px rgba(2, 8, 24, 0.5);
 }
 
 @layer base {
@@ -40,16 +46,51 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at 8% 8%, rgba(56, 93, 255, 0.25), transparent 33%),
-      radial-gradient(circle at 87% 12%, rgba(24, 196, 255, 0.16), transparent 28%),
-      radial-gradient(circle at 16% 92%, rgba(236, 94, 255, 0.16), transparent 28%),
-      radial-gradient(circle at 78% 85%, rgba(255, 157, 52, 0.12), transparent 28%),
-      linear-gradient(180deg, #0a101c 0%, #090d15 46%, #0a1222 100%);
+      radial-gradient(circle at 7% 8%, rgba(73, 109, 255, 0.24), transparent 31%),
+      radial-gradient(circle at 86% 12%, rgba(32, 200, 255, 0.15), transparent 27%),
+      radial-gradient(circle at 14% 88%, rgba(236, 109, 255, 0.15), transparent 27%),
+      radial-gradient(circle at 76% 84%, rgba(95, 124, 255, 0.14), transparent 25%),
+      linear-gradient(180deg, #090f1d 0%, #080b14 46%, #0a1325 100%);
     font-family: var(--font-body), sans-serif;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
   }
 
   .font-heading {
     font-family: var(--font-heading), sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .surface-panel {
+    background: linear-gradient(155deg, var(--surface-1), var(--surface-2));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    border-radius: 1.25rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.45rem, 1.2rem + 1.05vw, 2rem);
+    line-height: 1.14;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 1.65rem + 2.35vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.04rem, 0.96rem + 0.35vw, 1.28rem);
+    line-height: 1.58;
   }
 }
 
@@ -59,5 +100,16 @@
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
