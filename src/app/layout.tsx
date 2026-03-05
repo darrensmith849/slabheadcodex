@@ -57,10 +57,10 @@ export default async function RootLayout({
           <NeonAuroraBackground pathname={pathname} />
           <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
           <header className="sticky top-0 z-50 mt-2 rounded-xl border border-[#89a0ff]/30 bg-[linear-gradient(135deg,rgba(12,19,36,0.86),rgba(16,24,43,0.8))] shadow-[0_0_0_1px_rgba(120,148,255,0.24),0_18px_44px_rgba(4,10,26,0.45)] backdrop-blur-md">
-            <nav className="flex items-center justify-between px-3 py-3 sm:px-4">
+            <nav className="flex items-center justify-between px-4 py-3 sm:px-5">
               <Link
                 href="/"
-                className="inline-flex min-h-11 items-center rounded-lg border border-[#93a6ff]/35 bg-[linear-gradient(135deg,rgba(74,96,255,0.2),rgba(236,109,255,0.16))] px-5 py-2.5 font-heading text-base uppercase tracking-[0.18em] leading-[1.1] text-[#f6f8ff] shadow-[0_0_18px_rgba(120,146,255,0.24)]"
+                className="inline-flex h-11 min-w-[172px] items-center justify-center rounded-lg border border-[#93a6ff]/35 bg-[linear-gradient(135deg,rgba(74,96,255,0.2),rgba(236,109,255,0.16))] px-6 font-heading text-base uppercase leading-none tracking-[0.16em] text-[#f6f8ff] shadow-[0_0_18px_rgba(120,146,255,0.24)]"
               >
                 SLABHEAD
               </Link>
