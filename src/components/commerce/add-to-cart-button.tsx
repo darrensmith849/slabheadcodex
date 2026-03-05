@@ -38,6 +38,17 @@ export function AddToCartButton({ slug, disabled }: AddToCartButtonProps) {
       >
         {disabled ? "Out of stock" : added ? "Added" : "Add to cart"}
       </button>
+      <button
+        type="button"
+        disabled={disabled}
+        onClick={() => {
+          addToCart(slug, quantity);
+          window.location.href = "/checkout";
+        }}
+        className="rounded-md border border-[#4d6fff]/55 bg-[#4d6fff]/15 px-4 py-2 font-semibold text-[#dce6ff] transition hover:bg-[#4d6fff]/30 disabled:cursor-not-allowed disabled:border-[#2a3354] disabled:bg-[#202842] disabled:text-[#8391b8]"
+      >
+        Buy now
+      </button>
       <Link href="/checkout" className="rounded-md border border-white/20 px-4 py-2 font-semibold text-[#d9e5ff] hover:bg-white/5">
         Go to checkout
       </Link>

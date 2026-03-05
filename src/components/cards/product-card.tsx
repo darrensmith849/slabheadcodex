@@ -36,6 +36,9 @@ export function ProductCard({ slug, name, image, price, company, score, game }: 
             <GradeBadge company={company} score={score} />
             <PriceTag value={price} />
           </div>
+          <span className="inline-flex rounded-md border border-[#4d6fff]/45 bg-[#4d6fff]/15 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-[#dce6ff]">
+            View & Buy
+          </span>
         </div>
       </Link>
     </article>
