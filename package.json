@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "assets:verify": "node scripts/verify-assets.mjs",
+    "assets:sync:clean": "node scripts/download-legacy-assets.mjs --clean --regen --max-pages 80 --max-assets 600 --concurrency 6 --dedupe --optimise",
     "check:no-hotlinks": "node scripts/check-no-hotlinks.mjs",
     "check": "npm run check:no-hotlinks && npm run check:links && npm run lint && npm run typecheck && npm run build",
     "check:links": "node scripts/check-links.mjs"

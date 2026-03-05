@@ -48,7 +48,7 @@ export const products: Product[] = [
     gradeCompany: "PSA",
     gradeScore: "9",
     offer: { price: 2400, currency: "ZAR", availability: "in_stock" },
-    images: [{ src: "/assets/legacy/products/vaporeon-vivid-psa-9-2-scaled.png", alt: "Vaporeon PSA 9 slab" }],
+    images: [{ src: "/assets/legacy/products/eevee-psa-9-640x1024.png", alt: "Vaporeon PSA 9 slab" }],
     tags: ["pokemon", "vaporeon", "psa"],
   },
   {
@@ -61,7 +61,7 @@ export const products: Product[] = [
     gradeCompany: "PSA",
     gradeScore: "9",
     offer: { price: 1850, currency: "ZAR", availability: "in_stock" },
-    images: [{ src: "/assets/legacy/products/arcanine-promo-psa-9-4-scaled.png", alt: "Arcanine promo PSA 9 slab" }],
+    images: [{ src: "/assets/legacy/products/arcanine-promo-psa-6-3-scaled.png", alt: "Arcanine promo PSA slab" }],
     tags: ["pokemon", "arcanine", "psa", "promo"],
   },
   {
