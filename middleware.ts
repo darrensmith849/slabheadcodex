@@ -1,6 +1,3 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
-
 const GONE_ROUTES = new Set([
   "/sample-page",
   "/testpage",
@@ -34,34 +31,38 @@ function normalizePath(pathname: string) {
   return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
 }
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+export function middleware(request: Request) {
+  try {
+    const url = new URL(request.url);
+    const pathname = url.pathname;
 
-  // Skip internal/static/system routes to keep middleware stable on Edge.
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/.well-known") ||
-    pathname === "/favicon.ico" ||
-    pathname === "/robots.txt" ||
-    pathname === "/sitemap.xml" ||
-    PUBLIC_FILE.test(pathname)
-  ) {
-    return NextResponse.next();
+    if (
+      pathname.startsWith("/_next") ||
+      pathname.startsWith("/api") ||
+      pathname.startsWith("/.well-known") ||
+      pathname === "/favicon.ico" ||
+      pathname === "/robots.txt" ||
+      pathname === "/sitemap.xml" ||
+      PUBLIC_FILE.test(pathname)
+    ) {
+      return;
+    }
+
+    const normalized = normalizePath(pathname);
+    if (GONE_ROUTES.has(normalized)) {
+      return new Response("Gone", {
+        status: 410,
+        headers: {
+          "content-type": "text/plain; charset=utf-8",
+          "x-robots-tag": "noindex, nofollow",
+        },
+      });
+    }
+
+    return;
+  } catch {
+    return;
   }
-
-  const normalized = normalizePath(pathname);
-  if (GONE_ROUTES.has(normalized)) {
-    return new Response("Gone", {
-      status: 410,
-      headers: {
-        "content-type": "text/plain; charset=utf-8",
-        "x-robots-tag": "noindex, nofollow",
-      },
-    });
-  }
-
-  return NextResponse.next();
 }
 
 export const config = {
