@@ -1,3 +1,5 @@
+import { NextResponse } from "next/dist/server/web/spec-extension/response";
+
 const GONE_ROUTES = new Set([
   "/sample-page",
   "/testpage",
@@ -31,14 +33,6 @@ function normalizePath(pathname: string) {
   return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
 }
 
-function nextPassThrough() {
-  return new Response(null, {
-    headers: {
-      "x-middleware-next": "1",
-    },
-  });
-}
-
 export function middleware(request: Request) {
   try {
     const url = new URL(request.url);
@@ -53,7 +47,7 @@ export function middleware(request: Request) {
       pathname === "/sitemap.xml" ||
       PUBLIC_FILE.test(pathname)
     ) {
-      return nextPassThrough();
+      return NextResponse.next();
     }
 
     const normalized = normalizePath(pathname);
@@ -67,9 +61,9 @@ export function middleware(request: Request) {
       });
     }
 
-    return nextPassThrough();
+    return NextResponse.next();
   } catch {
-    return nextPassThrough();
+    return NextResponse.next();
   }
 }
 
