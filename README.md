@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Slabhead Collectables (Next.js)
 
-## Getting Started
+Premium neon-styled ecommerce rebuild for Slabhead, built with Next.js App Router and TypeScript.
 
-First, run the development server:
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quality Gates
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run check
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This runs hotlink checks, link checks, lint, typecheck, and production build.
 
-## Learn More
+## PayFast Checkout Setup
 
-To learn more about Next.js, take a look at the following resources:
+The site uses hosted PayFast redirect checkout (no card data handled by this app).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Required environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+PAYFAST_MERCHANT_ID=
+PAYFAST_MERCHANT_KEY=
+PAYFAST_PASSPHRASE=
+PAYFAST_SANDBOX=true
+NEXT_PUBLIC_SITE_URL=https://your-domain.co.za
+```
 
-## Deploy on Vercel
+### PayFast process endpoints
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Live: `https://www.payfast.co.za/eng/process`
+- Sandbox: `https://sandbox.payfast.co.za/eng/process`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ITN callback
+
+Set PayFast Notify URL (ITN) to:
+
+`https://your-domain.co.za/api/payfast/itn`
+
+Notes:
+- ITN must be publicly reachable.
+- Local development needs a tunnel (for example: ngrok) if you want live ITN callbacks to hit your machine.
+
+## Order Storage
+
+- If `DATABASE_URL` is set, orders use `PostgresOrderStore`.
+- Without `DATABASE_URL`, app falls back to `InMemoryOrderStore` with a runtime warning.
+- In-memory mode is for development only and does not persist across restarts.
