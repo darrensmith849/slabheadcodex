@@ -1,4 +1,4 @@
-import { NextResponse } from "next/dist/server/web/spec-extension/response";
+import { NextResponse } from "next/server";
 
 const GONE_ROUTES = new Set([
   "/sample-page",

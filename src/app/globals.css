@@ -21,13 +21,13 @@
 :root {
   --font-heading: "Bank Gothic", "Eurostile", "Trebuchet MS", sans-serif;
   --font-body: "Exo 2", "Segoe UI", "Trebuchet MS", sans-serif;
-  --background: #0b0e16;
+  --background: #090d15;
   --foreground: #edf1ff;
   --card: #101524;
   --card-foreground: #edf1ff;
   --primary: #385dff;
   --primary-foreground: #f7f9ff;
-  --muted: #121a2b;
+  --muted: #111b2f;
   --muted-foreground: #a7b2cc;
   --border: rgba(237, 241, 255, 0.14);
 }
@@ -40,9 +40,11 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at 12% 10%, rgba(56, 93, 255, 0.22), transparent 34%),
-      radial-gradient(circle at 90% 20%, rgba(0, 103, 153, 0.15), transparent 30%),
-      radial-gradient(circle at 50% 120%, rgba(167, 20, 76, 0.1), transparent 35%);
+      radial-gradient(circle at 8% 8%, rgba(56, 93, 255, 0.25), transparent 33%),
+      radial-gradient(circle at 87% 12%, rgba(24, 196, 255, 0.16), transparent 28%),
+      radial-gradient(circle at 16% 92%, rgba(236, 94, 255, 0.16), transparent 28%),
+      radial-gradient(circle at 78% 85%, rgba(255, 157, 52, 0.12), transparent 28%),
+      linear-gradient(180deg, #0a101c 0%, #090d15 46%, #0a1222 100%);
     font-family: var(--font-body), sans-serif;
   }
 

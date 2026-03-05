@@ -5,6 +5,10 @@ import { siteConfig } from "@/config/site";
 const staticRoutes = [
   "",
   "/shop",
+  "/collectables",
+  "/pokemon-categories",
+  "/yu-gi-oh-categories",
+  "/magic-the-gathering-categories",
   "/contact-us",
   "/about-us",
   "/privacy-policy",

@@ -14,6 +14,7 @@ export const siteConfig = {
   },
   nav: [
     { label: "Shop", href: "/shop" },
+    { label: "Collectables", href: "/collectables" },
     { label: "Services", href: "/services-categories" },
     { label: "Culture", href: "/culture" },
     { label: "About", href: "/about-us" },
