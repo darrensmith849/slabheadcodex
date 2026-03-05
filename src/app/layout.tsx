@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Orbitron, Rajdhani } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
-
-const heading = Orbitron({
-  subsets: ["latin"],
-  weight: ["500", "700", "800"],
-  variable: "--font-heading",
-});
-
-const body = Rajdhani({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -45,9 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${heading.variable} ${body.variable} min-h-screen bg-background text-foreground antialiased`}
-      >
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
           <header className="sticky top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur">
             <nav className="flex items-center justify-between py-4">
