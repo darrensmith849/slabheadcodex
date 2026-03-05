@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import Link from "next/link";
+import { NeonAuroraBackground } from "@/components/visual/NeonAuroraBackground";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerStore = await headers();
+  const pathname = headerStore.get("x-pathname") ?? "/";
+
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -45,8 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-background text-foreground antialiased">
-        <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
-          <header className="sticky top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur">
+        <div className="relative isolate min-h-screen overflow-x-clip">
+          <NeonAuroraBackground pathname={pathname} />
+          <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
+          <header className="sticky top-0 z-50 mt-2 rounded-xl border border-white/20 bg-[linear-gradient(135deg,rgba(15,24,44,0.82),rgba(18,27,48,0.75))] shadow-[0_0_0_1px_rgba(112,136,255,0.22),0_20px_45px_rgba(3,8,20,0.42)] backdrop-blur-md">
             <nav className="flex items-center justify-between py-4">
               <Link href="/" className="font-heading text-xl uppercase tracking-[0.22em] text-[#f2f5ff]">
                 {siteConfig.siteName}
@@ -87,6 +94,7 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
+          </div>
         </div>
       </body>
     </html>

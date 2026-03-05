@@ -37,6 +37,8 @@ export function middleware(request: Request) {
   try {
     const url = new URL(request.url);
     const pathname = url.pathname;
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("x-pathname", pathname);
 
     if (
       pathname.startsWith("/_next") ||
@@ -47,7 +49,7 @@ export function middleware(request: Request) {
       pathname === "/sitemap.xml" ||
       PUBLIC_FILE.test(pathname)
     ) {
-      return NextResponse.next();
+      return NextResponse.next({ request: { headers: requestHeaders } });
     }
 
     const normalized = normalizePath(pathname);
@@ -61,7 +63,7 @@ export function middleware(request: Request) {
       });
     }
 
-    return NextResponse.next();
+    return NextResponse.next({ request: { headers: requestHeaders } });
   } catch {
     return NextResponse.next();
   }
