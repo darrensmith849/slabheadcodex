@@ -21,7 +21,13 @@ export function ProductCard({ slug, name, image, price, company, score, game }: 
       </span>
       <Link href={`/product/${slug}`} className="relative block">
         <div className="relative aspect-[3/4] overflow-hidden">
-          <Image src={image} alt={name} fill className="motion-safe:group-hover:scale-[1.035] object-cover transition duration-500" />
+          <Image
+            src={image}
+            alt={name}
+            fill
+            sizes="(max-width: 768px) 92vw, (max-width: 1280px) 46vw, 30vw"
+            className="motion-safe:group-hover:scale-[1.035] object-cover transition duration-500"
+          />
         </div>
         <div className="space-y-3 p-4">
           <p className="text-xs uppercase tracking-[0.18em] text-[#8ea2d6]">{game}</p>

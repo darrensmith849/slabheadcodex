@@ -47,13 +47,34 @@ export default async function Home() {
         </div>
         <div className="relative mt-6 grid min-h-[410px] grid-cols-2 gap-3 lg:mt-0 lg:min-h-[460px]">
           <div className="relative col-span-1 row-span-2 overflow-hidden rounded-2xl border border-white/15 bg-[#0f1422]">
-            <Image src={heroPinkImages.main} alt="Codex pink edit collector lineup" fill sizes="(max-width: 1024px) 52vw, 34vw" className="object-cover" />
+            <Image
+              src={heroPinkImages.main}
+              alt="Codex pink edit collector lineup"
+              fill
+              priority
+              sizes="(max-width: 1024px) 52vw, 34vw"
+              className="object-cover"
+            />
           </div>
           <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#0f1422]">
-            <Image src={heroPinkImages.top} alt="Codex pink edit slab desk visual" fill sizes="(max-width: 1024px) 48vw, 22vw" className="object-cover" />
+            <Image
+              src={heroPinkImages.top}
+              alt="Codex pink edit slab desk visual"
+              fill
+              priority
+              sizes="(max-width: 1024px) 48vw, 22vw"
+              className="object-cover"
+            />
           </div>
           <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#0f1422]">
-            <Image src={heroPinkImages.bottom} alt="Codex pink edit cyberpunk scene" fill sizes="(max-width: 1024px) 48vw, 22vw" className="object-cover" />
+            <Image
+              src={heroPinkImages.bottom}
+              alt="Codex pink edit cyberpunk scene"
+              fill
+              priority
+              sizes="(max-width: 1024px) 48vw, 22vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -207,6 +228,7 @@ export default async function Home() {
             alt="Codex culture neon scene"
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
+            loading="lazy"
             className="object-cover"
           />
         </div>
