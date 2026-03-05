@@ -53,13 +53,15 @@ async function main() {
 
   for (const file of files) {
     const absolute = path.join(root, file);
-    if (file === path.join("data", "assets-manifest.json")) { continue; }
     const content = await fs.readFile(absolute, "utf8");
 
     const lines = content.split("\n");
     for (let i = 0; i < lines.length; i += 1) {
       const line = lines[i];
-      if (file === path.join("data", "assets-manifest.json") && line.includes('"oldUrl"')) {
+      if (
+        (file === path.join("data", "assets-manifest.json") || file === path.join("data", "assets-index.json")) &&
+        line.includes('"oldUrl"')
+      ) {
         continue;
       }
       for (const pattern of forbidden) {
