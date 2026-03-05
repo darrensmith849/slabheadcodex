@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CategoryCard, ProductCard, ServiceCard } from "@/components/cards";
 import { CtaBlock, TrustBadge } from "@/components/ui";
@@ -30,10 +31,13 @@ export default async function Home() {
           </div>
         </div>
         <div className="relative overflow-hidden rounded-xl border border-white/10">
-          <img
+          <Image
             src="/assets/legacy/brand/scene-02.jpg"
             alt="Codex neon TCG culture visual"
-            className="h-full min-h-[260px] w-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="object-cover"
           />
         </div>
       </section>
@@ -150,11 +154,15 @@ export default async function Home() {
             Explore culture stories
           </Link>
         </div>
-        <img
-          src="/assets/legacy/brand/003-sh-neon-03-1024x585.jpg"
-          alt="Codex culture neon scene"
-          className="h-full min-h-[220px] w-full rounded-lg object-cover"
-        />
+        <div className="relative min-h-[220px] overflow-hidden rounded-lg">
+          <Image
+            src="/assets/legacy/brand/003-sh-neon-03-1024x585.jpg"
+            alt="Codex culture neon scene"
+            fill
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="object-cover"
+          />
+        </div>
       </section>
 
       <section className="rounded-xl border border-white/10 bg-[#0e1321] p-7">
