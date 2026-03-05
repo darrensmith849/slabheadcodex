@@ -135,7 +135,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
 
       <section className="space-y-4">
         <p className="text-sm text-[#9fb1dc]">{results.length} products found</p>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 2xl:grid-cols-3">
           {results.map((product) => (
             <ProductCard
               key={product.id}

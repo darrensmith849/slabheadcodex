@@ -17,7 +17,7 @@ export function Gallery({ images }: GalleryProps) {
 
   return (
     <div className="space-y-3">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10 bg-[#101524]">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10 bg-[#101524]">
         <Image src={hero.src} alt={hero.alt} fill className="object-cover" />
       </div>
       {thumbs.length > 0 ? (

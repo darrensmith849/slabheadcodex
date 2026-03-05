@@ -34,7 +34,7 @@ const defaultForm: FormState = {
 };
 
 export function CheckoutClient({ catalogue, payfastSandbox }: CheckoutClientProps) {
-  const [cart, setCart] = useState<CartItem[]>(() => readCart());
+  const [cart] = useState<CartItem[]>(() => readCart());
   const [form, setForm] = useState<FormState>(defaultForm);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -96,7 +96,7 @@ export function CheckoutClient({ catalogue, payfastSandbox }: CheckoutClientProp
 
     const body = (await response.json()) as { orderId: string };
     writeCart([]);
-    window.location.href = `/pay/payfast/${encodeURIComponent(body.orderId)}`;
+    window.location.assign(`/pay/payfast/${encodeURIComponent(body.orderId)}`);
   }
 
   return (

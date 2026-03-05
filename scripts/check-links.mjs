@@ -30,7 +30,8 @@ async function main() {
   for (const file of routeFiles) {
     const content = await fs.readFile(file, "utf8");
     for (const match of content.matchAll(hrefPattern)) {
-      const href = match[1].replace(/\/$/, "") || "/";
+      const cleaned = match[1].split("#")[0].split("?")[0];
+      const href = cleaned.replace(/\/$/, "") || "/";
       if (href.startsWith("/product/") || href.startsWith("/api/")) continue;
       if (!routeSet.has(href)) {
         broken.push(`${path.relative(root, file)} -> ${href}`);

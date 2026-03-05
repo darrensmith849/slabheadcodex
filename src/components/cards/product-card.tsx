@@ -20,12 +20,12 @@ export function ProductCard({ slug, name, image, price, company, score, game }: 
         <span className="motion-safe:animate-[shimmer_2.4s_linear_infinite] motion-reduce:animate-none absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(255,255,255,0.16)_40%,transparent_60%)] bg-[length:200%_100%]" />
       </span>
       <Link href={`/product/${slug}`} className="relative block">
-        <div className="relative aspect-[3/4] overflow-hidden">
+        <div className="relative aspect-[2/3] overflow-hidden">
           <Image
             src={image}
             alt={name}
             fill
-            sizes="(max-width: 768px) 92vw, (max-width: 1280px) 46vw, 30vw"
+            sizes="(max-width: 768px) 92vw, (max-width: 1280px) 48vw, (max-width: 1536px) 44vw, 30vw"
             className="motion-safe:group-hover:scale-[1.035] object-cover transition duration-500"
           />
         </div>
