@@ -53,15 +53,15 @@ export default async function RootLayout({
         <div className="relative isolate min-h-screen overflow-x-clip">
           <NeonAuroraBackground pathname={pathname} />
           <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
-          <header className="sticky top-0 z-50 mt-2 rounded-xl border border-white/20 bg-[linear-gradient(135deg,rgba(15,24,44,0.82),rgba(18,27,48,0.75))] shadow-[0_0_0_1px_rgba(112,136,255,0.22),0_20px_45px_rgba(3,8,20,0.42)] backdrop-blur-md">
+          <header className="sticky top-0 z-50 mt-2 rounded-xl border border-[#89a0ff]/30 bg-[linear-gradient(135deg,rgba(12,19,36,0.86),rgba(16,24,43,0.8))] shadow-[0_0_0_1px_rgba(120,148,255,0.24),0_18px_44px_rgba(4,10,26,0.45)] backdrop-blur-md">
             <nav className="flex items-center justify-between py-4">
-              <Link href="/" className="font-heading text-xl uppercase tracking-[0.22em] text-[#f2f5ff]">
+              <Link href="/" className="font-heading text-xl uppercase tracking-[0.22em] text-[#f6f8ff] [text-shadow:0_0_14px_rgba(120,146,255,0.35)]">
                 {siteConfig.siteName}
               </Link>
               <ul className="flex items-center gap-5 text-sm font-semibold tracking-[0.08em] text-muted-foreground">
                 {siteConfig.nav.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="transition hover:text-foreground">
+                    <Link href={item.href} className="rounded-md px-2 py-1 text-[#c4d2f5] transition hover:bg-white/6 hover:text-[#f1f5ff]">
                       {item.label}
                     </Link>
                   </li>

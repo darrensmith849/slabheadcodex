@@ -41,8 +41,23 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
 
   return (
     <div className="space-y-8">
+      <section className="relative overflow-hidden rounded-2xl border border-[#7d95ff]/35 bg-[linear-gradient(140deg,rgba(16,24,44,0.84),rgba(20,28,52,0.8))] p-6 shadow-[0_0_0_1px_rgba(110,135,255,0.22),0_24px_55px_rgba(4,9,24,0.45)]">
+        <span className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#ec6dff]/20 blur-3xl" />
+        <span className="pointer-events-none absolute left-[35%] top-[68%] h-40 w-40 rounded-full bg-[#20c8ff]/17 blur-3xl" />
+        <div className="relative z-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="font-heading text-xs uppercase tracking-[0.24em] text-[#a6b7ff]">Codex Shop Grid</p>
+            <h1 className="mt-2 font-heading text-3xl uppercase tracking-[0.12em] text-[#f4f7ff]">Shop</h1>
+            <p className="mt-2 max-w-2xl text-[#c0cdef]">
+              Browse live inventory with grading, category, and pricing filters tuned for fast collector decisions.
+            </p>
+          </div>
+          <div className="rounded-lg border border-[#90a5ff]/30 bg-white/6 px-3 py-2 text-sm text-[#d2dcf8]">Verified local catalogue</div>
+        </div>
+      </section>
+
       <section className="rounded-2xl border border-white/10 bg-[#101524] p-6">
-        <h1 className="font-heading text-3xl uppercase tracking-[0.14em]">Shop</h1>
+        <h2 className="font-heading text-2xl uppercase tracking-[0.14em]">Filter Inventory</h2>
         <p className="mt-2 text-[#b7c4e7]">
           Filter {siteConfig.siteName} inventory by category, grade, and price to find collector-fit listings quickly.
         </p>
