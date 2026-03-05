@@ -5,12 +5,11 @@ import { CtaBlock, TrustBadge } from "@/components/ui";
 import { siteConfig } from "@/config/site";
 import { listCategories, listProducts } from "@/lib/commerce/provider";
 
-const vaultImages = [
-  "/assets/legacy/brand/43b6c8f5-f1f2-426f-b414-3d6a1e7249f3-2-300x400.jpg",
-  "/assets/legacy/brand/53f19380-3969-48dd-b7e5-950ab2344a27-300x400.jpg",
-  "/assets/legacy/brand/f82c5a72-d79f-46b1-a800-9a9b294dcc2b-300x400.jpg",
-  "/assets/legacy/brand/f9904291-4ff7-431b-94dc-00c4a3e7bfa5-300x400.jpg",
-];
+const heroPinkImages = {
+  main: "/assets/legacy/brand/screenshot-2025-01-16-at-14-34-44.jpg",
+  top: "/assets/legacy/brand/screenshot-2025-01-16-at-14-34-54.jpg",
+  bottom: "/assets/legacy/brand/dall-c2-b7e-2025-02-25-13-00-07-a-cyberpunk-inspired-scene-featuring-a-nerdy-character-in-a-futuristic-neon-lit-room-overlooking-a-sprawling-cyberpunk-cityscape-through-a-large-wind.webp",
+};
 
 const trustStats = [
   { label: "Inventory", value: "200+" },
@@ -26,13 +25,15 @@ export default async function Home() {
 
   return (
     <div className="space-y-12 pb-10">
-      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_16%_10%,rgba(56,93,255,0.34),transparent_36%),radial-gradient(circle_at_87%_18%,rgba(14,219,196,0.18),transparent_30%),#0f1422] p-8 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:p-10">
+      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_18%_10%,rgba(56,93,255,0.32),transparent_35%),radial-gradient(circle_at_82%_20%,rgba(236,109,255,0.18),transparent_32%),#0f1422] p-7 lg:grid lg:min-h-[540px] lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:p-10">
+        <span className="pointer-events-none absolute -right-16 -top-14 h-56 w-56 rounded-full bg-[#ec6dff]/20 blur-3xl" />
+        <span className="pointer-events-none absolute left-[30%] top-[72%] h-40 w-40 rounded-full bg-[#20c8ff]/15 blur-3xl" />
         <div className="space-y-5">
           <p className="font-heading text-xs uppercase tracking-[0.28em] text-[#95acff]">Codex Elite Vault</p>
-          <h1 className="font-heading text-4xl leading-tight text-[#f3f6ff] sm:text-5xl">
+          <h1 className="font-heading hero-title text-[#f3f6ff]">
             Premium TCG cards with collector-grade trust and high-energy aesthetics.
           </h1>
-          <p className="max-w-2xl text-lg text-[#b6c4ea]">
+          <p className="hero-subtitle max-w-2xl text-[#b6c4ea]">
             {siteConfig.siteName} combines slabbed grails, verified listing notes, and concierge-style card services for Pokemon, Yu-Gi-Oh, and MTG.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -44,12 +45,16 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        <div className="relative mt-8 grid min-h-[380px] gap-3 sm:grid-cols-2 lg:mt-0">
-          {vaultImages.map((src) => (
-            <div key={src} className="relative overflow-hidden rounded-xl border border-white/15">
-              <Image src={src} alt="Codex featured slab" fill sizes="(max-width: 1024px) 50vw, 20vw" className="object-cover" />
-            </div>
-          ))}
+        <div className="relative mt-6 grid min-h-[410px] grid-cols-2 gap-3 lg:mt-0 lg:min-h-[460px]">
+          <div className="relative col-span-1 row-span-2 overflow-hidden rounded-2xl border border-white/15 bg-[#0f1422]">
+            <Image src={heroPinkImages.main} alt="Codex pink edit collector lineup" fill sizes="(max-width: 1024px) 52vw, 34vw" className="object-cover" />
+          </div>
+          <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#0f1422]">
+            <Image src={heroPinkImages.top} alt="Codex pink edit slab desk visual" fill sizes="(max-width: 1024px) 48vw, 22vw" className="object-cover" />
+          </div>
+          <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#0f1422]">
+            <Image src={heroPinkImages.bottom} alt="Codex pink edit cyberpunk scene" fill sizes="(max-width: 1024px) 48vw, 22vw" className="object-cover" />
+          </div>
         </div>
       </section>
 
@@ -59,6 +64,23 @@ export default async function Home() {
           <TrustBadge label="Secure checkout" />
           <TrustBadge label="Real condition notes" />
           <TrustBadge label="Collector support" />
+        </div>
+      </section>
+
+      <section className="grid gap-4 rounded-2xl border border-white/10 bg-[linear-gradient(145deg,#11192f,#0f1426)] p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <h2 className="font-heading section-title uppercase text-[#ebf0ff]">Start With Collectables</h2>
+          <p className="mt-2 max-w-3xl text-[#b8c7e8]">
+            Enter by game category first, then drill into grade and price filters for fast collector decisions.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/collectables" className="rounded-lg bg-[#ec6dff]/20 px-4 py-2 font-semibold text-[#ffd8ff] ring-1 ring-[#ec6dff]/35 hover:bg-[#ec6dff]/28">
+            Open Collectables
+          </Link>
+          <Link href="/shop" className="rounded-lg border border-white/20 px-4 py-2 font-semibold text-[#dce6ff] hover:bg-white/5">
+            Browse Shop
+          </Link>
         </div>
       </section>
 
@@ -187,18 +209,6 @@ export default async function Home() {
             sizes="(max-width: 1024px) 100vw, 40vw"
             className="object-cover"
           />
-        </div>
-      </section>
-
-      <section className="grid gap-4 lg:grid-cols-[1fr_1fr_1fr]">
-        <div className="relative min-h-[180px] overflow-hidden rounded-xl border border-white/10">
-          <Image src="/assets/legacy/brand/dall-c2-b7e-2025-02-25-13-00-07-a-cyberpunk-inspired-scene-featuring-a-nerdy-character-in-a-futuristic-neon-lit-room-overlooking-a-sprawling-cyberpunk-cityscape-through-a-large-wind.webp" alt="Codex neon workspace" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
-        </div>
-        <div className="relative min-h-[180px] overflow-hidden rounded-xl border border-white/10">
-          <Image src="/assets/legacy/brand/screenshot-2025-01-16-at-14-34-44.jpg" alt="Codex featured card desk" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
-        </div>
-        <div className="relative min-h-[180px] overflow-hidden rounded-xl border border-white/10">
-          <Image src="/assets/legacy/brand/screenshot-2025-01-16-at-14-34-54.jpg" alt="Codex collector lineup" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
         </div>
       </section>
 
