@@ -31,6 +31,14 @@ function normalizePath(pathname: string) {
   return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
 }
 
+function nextPassThrough() {
+  return new Response(null, {
+    headers: {
+      "x-middleware-next": "1",
+    },
+  });
+}
+
 export function middleware(request: Request) {
   try {
     const url = new URL(request.url);
@@ -45,7 +53,7 @@ export function middleware(request: Request) {
       pathname === "/sitemap.xml" ||
       PUBLIC_FILE.test(pathname)
     ) {
-      return;
+      return nextPassThrough();
     }
 
     const normalized = normalizePath(pathname);
@@ -59,9 +67,9 @@ export function middleware(request: Request) {
       });
     }
 
-    return;
+    return nextPassThrough();
   } catch {
-    return;
+    return nextPassThrough();
   }
 }
 
